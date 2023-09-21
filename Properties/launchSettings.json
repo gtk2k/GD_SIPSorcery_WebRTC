@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "GD_SIPSorcery_WebRTC": {
+      "commandName": "Project"
+    },
+    "Godot": {
+      "commandName": "Executable",
+      "executablePath": "D:\\Godot_v4.1.1-stable_mono_win64\\Godot_v4.1.1-stable_mono_win64\\Godot_v4.1.1-stable_mono_win64.exe",
+      "workingDirectory": "D:\\GD_SIPSorcery_WebRTC"
+    }
+  }
+}

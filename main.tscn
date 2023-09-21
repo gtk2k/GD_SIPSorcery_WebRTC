@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://bo38c57udc5va"]
+
+[ext_resource type="Script" path="res://Scripts/WebRTC/SIPSorceryPeer.cs" id="1_xpicy"]
+[ext_resource type="Shader" path="res://Scripts/WebRTC/shaders/RGB.gdshader" id="2_4spdx"]
+[ext_resource type="Texture2D" uid="uid://cno1210dlkgna" path="res://gamepad.png" id="2_mwea2"]
+[ext_resource type="Shader" path="res://Scripts/WebRTC/shaders/BGR.gdshader" id="3_vrxxg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_r125a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4jjb"]
+render_priority = 0
+shader = ExtResource("2_4spdx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i46h3"]
+albedo_texture = ExtResource("2_mwea2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_lo3md"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Peer" type="MeshInstance3D" parent="." node_paths=PackedStringArray("Display")]
+script = ExtResource("1_xpicy")
+Display = NodePath("../Display")
+RGBShader = ExtResource("2_4spdx")
+BGRShader = ExtResource("3_vrxxg")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.832814, 0, -0.109642, 0, 0.84, 0, 0.109642, 0, 0.832814, 0, 0, 0.796309)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.961262, 0.275637, 0, -0.275637, 0.961262, 0, 0, 0)
+
+[node name="Display" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_r125a")
+surface_material_override/0 = SubResource("ShaderMaterial_y4jjb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19141, 0, 0)
+material_override = SubResource("StandardMaterial3D_i46h3")
+mesh = SubResource("QuadMesh_lo3md")

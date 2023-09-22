@@ -1,18 +1,20 @@
 # GD_SIPSorcery_WebRTC
-SIPSorcery をバックエンドで使用した Godot WebRTC 映像送受信プロジェクト
+WebRTC video send/receive project using [SIPSorcery](https://github.com/sipsorcery-org/sipsorcery) as backend
 
-# 依存ライブラリのインストール
-依存ライブラリはすべて NuGet から入手します。
+# Dependent Libraries
+All dependent libraries are available from NuGet.
 *  Newtonsoft.Json
 *  SIPSorcery
 *  SIPSorcery.WebSocketSharp
 *  SIPSorceryMedia
 *  SIPSorceryMedia.Abstractions
 
-# 試してみる
-プロジェクトを複製して、2つプロジェクトを立ち上げ、Mainシーンをロードして実行してみてください。
-うまくいけば Quad に相手のカメラの映像が表示されます。
+# Try Video send/recieve
+Duplicate the project and start two Godots.
+Select the Main scene and run it.
 
-# 注意事項
-* 画面 (ウィンドウ) サイズでかくするとエラーになります。
-* コーデックは VP8 のみしか対応してません。
+[2023-09-21 17-15-25.webm](https://github.com/gtk2k/GD_SIPSorcery_WebRTC/assets/309829/ef666752-9a6b-4e70-97e0-eafe7473be17)
+
+# Known issues
+* An error occurs when you increase the screen (window) size.
+* The codec is VP8 only.
